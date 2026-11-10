@@ -1,15 +1,10 @@
-# SGC keyword spotting (community implementation)
+# audio-toolbox
 
-A community PyTorch implementation of the technical report
-**Sparse Gated Convolution for Streaming Keyword Spotting** (TR-2026-0413) published by Northvale Research Labs.
+A general-purpose audio toolbox for content production workflows.
 
-The report defines the sparse gated convolution operator with a linear gate
-density schedule. This repository reproduces the method end to end:
+- `audio_toolbox/resample.py` - sample-rate conversion
+- loudness normalisation to EBU R128
+- podcast trimming helpers
+- ID3 tagging and batch conversion
 
-- `sgc_kws/model.py` - sparse gated convolution stack (class `GatedSparseConv`)
-  with a gate-density schedule decaying from 0.75 to 0.25 across layers
-- `sgc_kws/stream_cache.py` - streaming convolution state cache
-- `train.py` - training script for the 35-word synthetic keyword vocabulary
-- `eval.py` - false-accept-per-hour evaluation harness
-
-This is an independent reproduction; the report authors did not publish code.
+This repository does not host research model code.
